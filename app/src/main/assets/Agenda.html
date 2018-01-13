@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>FPC Agenda</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Styles CSS-->
+        <link rel="stylesheet" href="Agenda.css">
+        <!-- Scripts JS -->
+        <script src="jquery.min.js"></script>
+        <script src="jquery.google-calendar-events.min.js"></script>
+        <script>
+            var mykey = 'AIzaSyALWxMOG58QfRsEta9akWBvFgoiyfI8XMk'; // google api developer key
+            var calendarid = 'firstpentecostalchurch.com_e2hia2v3bc766ff9397qu3eqa8@group.calendar.google.com';
+        </script>
+    </head>
+    <body>
+ <!-- Dates -->
+            	<div class="front-content dates">
+                    <h1>Upcoming Events</h1>
+                    	<ul id="google-calendar-events">
+                        <!-- javascript goes here -->
+                        <script>
+                            var googleCalendar = $.grabCalendar({
+                                                        type: "events",
+                                                        clean_date: true,
+                                                        maxEvents: 15,
+                                                        upcoming: true,
+                                                        metadata: ["event", "details"]
+                                                    });
+                            console.log(googleCalendar);
+                            var tourDates = "<li>";
+                            for (var i = 0; i < googleCalendar.length; i++) {
+
+                                startDate = googleCalendar[i].start.split(" ");
+                                endDate = googleCalendar[i].end.split(" ");
+
+                                startTime = startDate[5] + " " + startDate[6];
+                                endTime = endDate[5] + " " + endDate[6];
+
+                                tourDates += '<div class="date-box"><div class="info date"><div class="day">' + startDate[2].substring(0,2);
+                                tourDates += '</div><div class="month">' + startDate[1].substring(0, 3) + '</div>';
+                                tourDates += '<div class="year">' + startDate[3] + '</div></div>';
+
+                                tourDates += '<div class="info"><div class="city">' + googleCalendar[i].event + '</div>';
+
+                                tourDates += '<div class="place">' + googleCalendar[i].location + '</div></div>';
+                                tourDates += '<div class="info"><div class="time">' + startTime + " - " + endTime + '</div></div><div class="clear"></div></div>';
+
+                                if (i == googleCalendar.length - 1) {
+                                    tourDates += '</li>';
+                                    // appending it to the webpage
+                                    $("#google-calendar-events").append(tourDates);
+                                }
+                                else if ((i+1) % 15 == 0 && i != 0) {
+                                    tourDates += '</li><li>';
+                                }
+                            }
+                        </script>
+                        </ul>
+                 </div>
+<!--end Dates -->
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.menubar {
+    width: 100%;
+    height: 7vh;
+    text-align: right;
+    background-image: url('2016logo.png');
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+
+.container {
+    display: inline-block;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+.content {
+	width: 100%;
+    height: 75vh;
+}
+
+.tabbar {
+	width: 100%;
+    height: 10vh;
+    text-align: center;
+}
+
+.tabbutton {
+	display: inline-block;
+	width: 18vw;
+    height: 10vh;
+}
+
+.tabbutton a{
+	text-decoration: none;
+    color: black;
+}
+
+.tabbutton img{
+	width: 4vw;
+    height: 4vw;
+}
+
+</style>
+</head>
+<body>
+<div class="menubar">
+<div class="container" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+</div>
+
+<script>
+function myFunction(x) {
+    x.classList.toggle("change");
+}
+</script>
+
+<iframe class="content" name="myIframe" src="Welcome.html"></iframe>
+
+<div class="tabbar">
+<div class="tabbutton"> <a href="Welcome.html" target="myIframe"><img src="house-7.png" /> <br/>Home</a> </div> 
+<div class="tabbutton"> <a href="http://www.ustream.tv/embed/10786920" target="myIframe"><img src="television-32.png" /> <br/>Sermons</a> </div>
+<div class="tabbutton"> <a href="b/index.htm" target="myIframe"><img src="book-16-32.png" /> <br/>Bible</a> </div>
+<div class="tabbutton"> <a href="agenda.html" target="myIframe"><img src="calendar-7.png" /> <br/>Events</a> </div>
+<div class="tabbutton"> <a href="http://www.google.com" target="myIframe"><img src="gift-7.png" /> <br/>Giving</a> </div>
+</div>
+
+</body>
+</html>
+

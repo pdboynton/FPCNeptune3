@@ -1,0 +1,61 @@
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,300italic,300,400italic,600,700);
+
+/* General Styles */
+body{	background: #fff;}
+ul, li{list-style: none; margin: 0; padding: 0;}
+.clear{clear: both;}
+a{text-decoration: none;}
+
+/* Titles */
+h1 {
+	font-size: 35px;
+	text-transform: uppercase;
+	font-weight: 300;
+	color: #6b6d6f;
+	font-family: 'Titillium Web', sans-serif;
+	text-align: center;
+	margin: 10px;
+}
+
+/* Dates */
+#dates>div:nth-of-type(1) {
+	margin: 0;
+	height: 850px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+.front-content.dates{
+    max-width: 500px;
+    margin: auto;
+}
+.date-box{margin-bottom: 12px;}
+.date-box:last-child{margin-bottom: 0;}
+.date-box .info{
+	float: left;
+	text-align: left;
+	padding-left: 10px;
+    color: #000/*#6b6d6f*/;
+	max-width: 250px;
+	overflow: hidden;
+	font-size: 16px;
+}
+.date-box .info div{position: relative;}
+.date-box .info.date{
+	width: 65px;
+	height: 90px;
+	background: #c3121c;
+	color: #fff;
+	text-align: center;
+	padding-left: 0;
+}
+.date-box .info .day {font-size: 34px; line-height: 25px; padding-top: 9px;}
+.date-box .info .month {font-size: 21px;}
+.date-box .info .year {font-size: 16px;}
+.date-box .info .city {font-size: 25px; color: #000;}
+.date-box .info .buy{color: #fff; margin-top: 2px;}
+.date-box .info .place{margin-top: 1px;}
+.date-box .info .time{margin-top: 1px;}
