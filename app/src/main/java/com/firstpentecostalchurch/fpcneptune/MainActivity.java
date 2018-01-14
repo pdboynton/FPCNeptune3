@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                webView.loadUrl("file:///android_asset/Contact.html");
                 // Snackbar.make(view, "This will cause some regularly used action to start", Snackbar.LENGTH_LONG)
                         // .setAction("Action", null).show();
             }
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_bible) {
-            webView.loadUrl("file:///android_asset/mobile.html");
+            webView.loadUrl("http://ebible.org/study/");
         } else if (id == R.id.nav_watch) {
             webView.loadUrl("file:///android_asset/Watch.html");
         } else if (id == R.id.nav_calendar) {
