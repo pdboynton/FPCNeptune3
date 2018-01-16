@@ -1,5 +1,7 @@
 package com.firstpentecostalchurch.fpcneptune;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -103,13 +105,14 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_bible) {
-            webView.loadUrl("http://ebible.org/study/");
+            webView.loadUrl("http://biblewebapp.com/v2/app/reader.html");
         } else if (id == R.id.nav_watch) {
             webView.loadUrl("file:///android_asset/Watch.html");
         } else if (id == R.id.nav_calendar) {
             webView.loadUrl("file:///android_asset/Agenda.html");
         } else if (id == R.id.nav_giving) {
-            ;
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LNZ6FZG2JNLNA"));
+            startActivity(browserIntent);
         } else if (id == R.id.nav_instagram) {
             webView.loadUrl("file:///android_asset/Instagram.html");
         } else if (id == R.id.nav_twitter) {
